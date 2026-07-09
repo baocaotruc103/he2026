@@ -593,8 +593,8 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
               <Bed className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-800 uppercase tracking-tight">Sắp xếp phòng nghỉ</h2>
-              <p className="text-xs text-slate-500 font-medium">Xếp phòng thủ công: Chọn một hoặc nhiều gia đình, tích chọn thành viên và điền số phòng nghỉ</p>
+              <h2 className="text-xl font-bold text-slate-800 uppercase tracking-tight">Sắp xếp phòng nghỉ</h2>
+              <p className="text-sm text-slate-500 font-medium">Xếp phòng thủ công: Chọn một hoặc nhiều gia đình, tích chọn thành viên và điền số phòng nghỉ</p>
             </div>
           </div>
 
@@ -602,7 +602,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
             {customAllocations.length > 0 && (
               <button
                 onClick={handleClearAllAllocations}
-                className="inline-flex items-center gap-1.5 text-[11px] font-black uppercase text-rose-600 bg-rose-50 hover:bg-rose-100 border border-rose-200/50 px-3.5 py-2 rounded-xl active:scale-95 transition-all cursor-pointer shadow-sm"
+                className="inline-flex items-center gap-1.5 text-[13px] font-black uppercase text-rose-600 bg-rose-50 hover:bg-rose-100 border border-rose-200/50 px-3.5 py-2 rounded-xl active:scale-95 transition-all cursor-pointer shadow-sm"
                 title="Xóa toàn bộ sơ đồ xếp phòng để xếp lại từ đầu"
               >
                 <Trash2 className="w-3.5 h-3.5" />
@@ -622,7 +622,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                   setRoomNotes("");
                 }
               }}
-              className="inline-flex items-center gap-1.5 text-[11px] font-black uppercase text-white bg-[#059669] hover:bg-[#047857] px-4 py-2 rounded-xl active:scale-95 transition-all cursor-pointer shadow-sm"
+              className="inline-flex items-center gap-1.5 text-[13px] font-black uppercase text-white bg-[#059669] hover:bg-[#047857] px-4 py-2 rounded-xl active:scale-95 transition-all cursor-pointer shadow-sm"
             >
               <Plus className="w-3.5 h-3.5" />
               {isFormOpen ? "Đóng bộ sắp phòng" : "Xếp phòng thủ công"}
@@ -635,14 +635,14 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
             <Bed className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-lg font-bold text-slate-800 uppercase tracking-tight">Danh sách bố trí phòng nghỉ cho các thành viên tham gia đoàn</h2>
+            <h2 className="text-xl font-bold text-slate-800 uppercase tracking-tight">Danh sách bố trí phòng nghỉ cho các thành viên tham gia đoàn</h2>
           </div>
         </div>
       )}
 
       {/* Success Notification Banner */}
       {successMsg && (
-        <div className="bg-emerald-50 border border-emerald-200 text-[#059669] px-4 py-3 rounded-2xl flex items-center gap-2.5 shadow-sm text-xs font-semibold animate-fadeIn">
+        <div className="bg-emerald-50 border border-emerald-200 text-[#059669] px-4 py-3 rounded-2xl flex items-center gap-2.5 shadow-sm text-sm font-semibold animate-fadeIn">
           <Check className="w-4 h-4 shrink-0 bg-emerald-100 p-0.5 rounded-full" />
           <span>{successMsg}</span>
         </div>
@@ -650,7 +650,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
 
       {/* Database Error Notification Banner */}
       {errMsg && (
-        <div className="bg-rose-50 border border-rose-200 text-rose-800 px-4 py-3.5 rounded-2xl flex items-start gap-2.5 shadow-sm text-xs font-semibold animate-fadeIn">
+        <div className="bg-rose-50 border border-rose-200 text-rose-800 px-4 py-3.5 rounded-2xl flex items-start gap-2.5 shadow-sm text-sm font-semibold animate-fadeIn">
           <AlertCircle className="w-4 h-4 shrink-0 text-rose-600 mt-0.5" />
           <div className="space-y-1">
             <p className="font-extrabold uppercase tracking-wide text-rose-700">Lỗi đồng bộ dữ liệu:</p>
@@ -661,46 +661,46 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
 
       {/* Supabase Diagnostics Panel for Admin */}
       {isAdmin && dbConfig && (
-        <div className="bg-slate-50 border border-slate-200/80 p-4 rounded-2xl shadow-sm text-xs space-y-3">
+        <div className="bg-slate-50 border border-slate-200/80 p-4 rounded-2xl shadow-sm text-sm space-y-3">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200/60 pb-2.5 gap-2">
             <span className="font-extrabold uppercase text-slate-700 tracking-wider flex items-center gap-1.5">
               <Database className="w-4 h-4 text-emerald-600" />
               Trạng thái đồng bộ Supabase (Chỉ hiển thị với Admin)
             </span>
-            <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold self-start sm:self-center ${dbConfig.supabaseConnected ? "bg-emerald-100 text-emerald-800" : "bg-amber-100 text-amber-800"}`}>
+            <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold self-start sm:self-center ${dbConfig.supabaseConnected ? "bg-emerald-100 text-emerald-800" : "bg-amber-100 text-amber-800"}`}>
               {dbConfig.supabaseConnected ? "● ĐÃ KẾT NỐI DATABASE" : "● CHẾ ĐỘ DỰ PHÒNG (LOCAL)"}
             </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="flex items-center justify-between p-2.5 bg-white rounded-xl border border-slate-200/50">
               <span className="text-slate-500 font-medium">Bảng `dang_ky`:</span>
-              <span className={`font-bold text-[11px] ${dbConfig.tablesStatus?.dang_ky ? "text-emerald-600" : "text-rose-600"}`}>
+              <span className={`font-bold text-[13px] ${dbConfig.tablesStatus?.dang_ky ? "text-emerald-600" : "text-rose-600"}`}>
                 {dbConfig.tablesStatus?.dang_ky ? "✓ Sẵn sàng" : "✕ Chưa tạo / Lỗi RLS"}
               </span>
             </div>
             <div className="flex items-center justify-between p-2.5 bg-white rounded-xl border border-slate-200/50">
               <span className="text-slate-500 font-medium">Bảng `room_allocations`:</span>
-              <span className={`font-bold text-[11px] ${dbConfig.tablesStatus?.room_allocations ? "text-emerald-600" : "text-rose-600"}`}>
+              <span className={`font-bold text-[13px] ${dbConfig.tablesStatus?.room_allocations ? "text-emerald-600" : "text-rose-600"}`}>
                 {dbConfig.tablesStatus?.room_allocations ? "✓ Sẵn sàng" : "✕ Chưa tạo / Lỗi RLS"}
               </span>
             </div>
             <div className="flex items-center justify-between p-2.5 bg-white rounded-xl border border-slate-200/50">
               <span className="text-slate-500 font-medium">Bảng `vehicle_allocations`:</span>
-              <span className={`font-bold text-[11px] ${dbConfig.tablesStatus?.vehicle_allocations ? "text-emerald-600" : "text-rose-600"}`}>
+              <span className={`font-bold text-[13px] ${dbConfig.tablesStatus?.vehicle_allocations ? "text-emerald-600" : "text-rose-600"}`}>
                 {dbConfig.tablesStatus?.vehicle_allocations ? "✓ Sẵn sàng" : "✕ Chưa tạo / Lỗi RLS"}
               </span>
             </div>
           </div>
           {(!dbConfig.tablesStatus?.room_allocations || !dbConfig.tablesStatus?.vehicle_allocations) && dbConfig.supabaseConnected && (
             <div className="bg-rose-50 border border-rose-100/80 text-rose-800 p-3.5 rounded-xl space-y-2">
-              <p className="font-extrabold text-[11px] uppercase tracking-wider text-rose-700">Lưu ý quan trọng:</p>
-              <p className="text-[11px] leading-relaxed text-slate-600 font-medium">
+              <p className="font-extrabold text-[13px] uppercase tracking-wider text-rose-700">Lưu ý quan trọng:</p>
+              <p className="text-[13px] leading-relaxed text-slate-600 font-medium">
                 Dữ liệu xếp phòng và phân xe chưa được lưu vào bảng Supabase vì hệ thống chưa tìm thấy bảng <strong>room_allocations</strong> và <strong>vehicle_allocations</strong> trong cơ sở dữ liệu Supabase của bạn. 
                 <br />
                 Vui lòng truy cập <strong>Supabase Dashboard</strong> {" -> "} <strong>SQL Editor</strong> {" -> "} nhấn <strong>New query</strong>, sao chép toàn bộ mã SQL trong tệp <strong>supabase_schema.sql</strong> ở thư mục gốc của dự án này, dán vào đó rồi nhấn <strong>Run</strong> để khởi tạo bảng và tắt RLS.
               </p>
               {Object.keys(dbConfig.tableErrors || {}).length > 0 && (
-                <div className="bg-white/80 p-2 rounded-lg border border-rose-200/40 text-[10px] font-mono text-slate-500 overflow-x-auto max-h-24">
+                <div className="bg-white/80 p-2 rounded-lg border border-rose-200/40 text-xs font-mono text-slate-500 overflow-x-auto max-h-24">
                   <strong>Chi tiết lỗi từ Supabase:</strong>
                   {Object.entries(dbConfig.tableErrors).map(([tbl, err]: any) => (
                     <div key={tbl} className="truncate">{tbl}: {err}</div>
@@ -721,11 +721,11 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
           <div className="bg-gradient-to-r from-[#059669] to-emerald-700 text-white px-5 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-emerald-100" />
-              <h3 className="font-extrabold text-sm uppercase tracking-wide">
+              <h3 className="font-extrabold text-base uppercase tracking-wide">
                 {editingRoomNo ? `Chỉnh Sửa Phòng ${editingRoomNo}` : "Bộ Sắp Xếp Phòng Thủ Công"}
               </h3>
             </div>
-            <span className="text-[10px] bg-emerald-800/60 px-2 py-0.5 rounded-full border border-emerald-500/20 text-emerald-100 font-bold uppercase">
+            <span className="text-xs bg-emerald-800/60 px-2 py-0.5 rounded-full border border-emerald-500/20 text-emerald-100 font-bold uppercase">
               {editingRoomNo ? "Chế độ sửa" : "Tạo mới"}
             </span>
           </div>
@@ -735,7 +735,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
               {/* LEFT COLUMN: Employee & Companion checklist */}
               <div className="space-y-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
+                  <label className="block text-sm font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
                     1. Chọn Nhân viên / Gia đình (Có thể chọn nhiều gia đình ghép phòng)
                   </label>
                   <input
@@ -743,7 +743,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                     placeholder="Tìm nhanh nhân viên / gia đình..."
                     value={regSearchTerm}
                     onChange={(e) => setRegSearchTerm(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 p-2.5 text-xs rounded-xl mb-2 focus:outline-none focus:ring-2 focus:ring-emerald-100"
+                    className="w-full bg-slate-50 border border-slate-200 p-2.5 text-sm rounded-xl mb-2 focus:outline-none focus:ring-2 focus:ring-emerald-100"
                   />
                   <div className="border border-slate-200 rounded-2xl p-2 max-h-48 overflow-y-auto space-y-1 bg-slate-50/40">
                     {registrations
@@ -770,11 +770,11 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                               onChange={() => handleToggleReg(reg.id)}
                               className="w-3.5 h-3.5 text-emerald-600 border-slate-300 rounded focus:ring-emerald-500 accent-[#059669]"
                             />
-                            <div className="flex-1 min-w-0 text-xs">
+                            <div className="flex-1 min-w-0 text-sm">
                               <span className="font-bold">{reg.employee.fullName}</span>{" "}
                               <span className="text-slate-500 font-medium">({reg.department || "N/A"})</span>
                               {companionCount > 0 && (
-                                <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-slate-100 text-[9px] text-slate-600 font-bold shrink-0">
+                                <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-slate-100 text-[11px] text-slate-600 font-bold shrink-0">
                                   +{companionCount} người thân
                                 </span>
                               )}
@@ -789,10 +789,10 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                 {selectedRegs.length > 0 && (
                   <div className="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-4">
                     <div className="flex items-center justify-between border-b border-slate-200/50 pb-2">
-                      <span className="text-xs font-extrabold text-slate-700 uppercase tracking-tight">
+                      <span className="text-sm font-extrabold text-slate-700 uppercase tracking-tight">
                         Thành viên gia đình được chọn
                       </span>
-                      <span className="text-[10px] text-slate-400 font-medium italic">
+                      <span className="text-xs text-slate-400 font-medium italic">
                         (Đã tự chọn cả nhà, tích để bỏ bớt nếu muốn)
                       </span>
                     </div>
@@ -800,7 +800,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                     <div className="space-y-4 max-h-60 overflow-y-auto pr-1">
                       {selectedRegs.map(reg => (
                         <div key={reg.id} className="space-y-2 border-b border-slate-100 last:border-0 pb-3 last:pb-0">
-                          <p className="text-[10px] font-black text-[#059669] uppercase tracking-wider">
+                          <p className="text-xs font-black text-[#059669] uppercase tracking-wider">
                             Gia đình {reg.employee.fullName}
                           </p>
                           
@@ -814,15 +814,15 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                                 className="w-4 h-4 text-emerald-600 border-slate-300 rounded focus:ring-emerald-500 accent-[#059669]"
                               />
                               <div className="flex flex-col min-w-0">
-                                <span className="text-xs font-bold text-slate-800 truncate">{reg.employee.fullName}</span>
+                                <span className="text-sm font-bold text-slate-800 truncate">{reg.employee.fullName}</span>
                                 {guestToRoomMap.has(reg.employee.fullName) && (
-                                  <span className="text-[9px] text-amber-600 font-extrabold">
+                                  <span className="text-[11px] text-amber-600 font-extrabold">
                                     (Đã ở {formatRoomNo(guestToRoomMap.get(reg.employee.fullName) || "")})
                                   </span>
                                 )}
                               </div>
                             </div>
-                            <span className="text-[9px] font-black uppercase px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-100 shrink-0">
+                            <span className="text-[11px] font-black uppercase px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-100 shrink-0">
                               Nhân viên
                             </span>
                           </label>
@@ -841,15 +841,15 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                                   className="w-4 h-4 text-emerald-600 border-slate-300 rounded focus:ring-emerald-500 accent-[#059669]"
                                 />
                                 <div className="flex flex-col min-w-0">
-                                  <span className="text-xs font-semibold text-slate-700 truncate">{comp.fullName}</span>
+                                  <span className="text-sm font-semibold text-slate-700 truncate">{comp.fullName}</span>
                                   {guestToRoomMap.has(comp.fullName) && (
-                                    <span className="text-[9px] text-amber-600 font-extrabold">
+                                    <span className="text-[11px] text-amber-600 font-extrabold">
                                       (Đã ở {formatRoomNo(guestToRoomMap.get(comp.fullName) || "")})
                                     </span>
                                   )}
                                 </div>
                               </div>
-                              <span className="text-[9px] font-bold px-2 py-0.5 rounded-md bg-sky-50 text-sky-700 border border-sky-100 shrink-0">
+                              <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-sky-50 text-sky-700 border border-sky-100 shrink-0">
                                 Thân nhân ({comp.relationship})
                               </span>
                             </label>
@@ -869,7 +869,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
 
                       if (overlapNames.length > 0) {
                         return (
-                          <div className="bg-amber-50 border border-amber-200 p-2.5 rounded-xl text-[10px] text-amber-800 font-medium flex items-start gap-2">
+                          <div className="bg-amber-50 border border-amber-200 p-2.5 rounded-xl text-xs text-amber-800 font-medium flex items-start gap-2">
                             <AlertCircle className="w-4 h-4 shrink-0 text-amber-500 mt-0.5" />
                             <div>
                               <span className="font-bold">Lưu ý di chuyển phòng:</span>{" "}
@@ -887,7 +887,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
               {/* RIGHT COLUMN: Room details */}
               <div className="space-y-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
+                  <label className="block text-sm font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
                     2. Nhập Số Phòng (Ví dụ: P.105, P.202)
                   </label>
                   <input
@@ -896,12 +896,12 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                     placeholder="Nhập số phòng..."
                     value={roomNo}
                     onChange={(e) => setRoomNo(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 p-2.5 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 transition-all font-bold text-slate-800 uppercase"
+                    className="w-full bg-slate-50 border border-slate-200 p-2.5 text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 transition-all font-bold text-slate-800 uppercase"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
+                  <label className="block text-sm font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
                     3. Xếp Tên / Loại Phòng
                   </label>
                   <div className="grid grid-cols-2 gap-2 mb-2">
@@ -912,7 +912,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                         setRoomTypeName("Family Suite Ocean View");
                         setIsCustomRoomName(false);
                       }}
-                      className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
+                      className={`py-2 px-3 text-sm font-bold rounded-xl border transition-all cursor-pointer ${
                         roomType === "Family" && !isCustomRoomName
                           ? "bg-blue-50 border-blue-400 text-blue-700"
                           : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
@@ -927,7 +927,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                         setRoomTypeName("Deluxe Twin Bed");
                         setIsCustomRoomName(false);
                       }}
-                      className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
+                      className={`py-2 px-3 text-sm font-bold rounded-xl border transition-all cursor-pointer ${
                         roomType === "Double" && !isCustomRoomName
                           ? "bg-purple-50 border-purple-400 text-purple-700"
                           : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
@@ -957,7 +957,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                           }
                         }
                       }}
-                      className="w-full bg-slate-50 border border-slate-200 p-2.5 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 transition-all font-semibold text-slate-700"
+                      className="w-full bg-slate-50 border border-slate-200 p-2.5 text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 transition-all font-semibold text-slate-700"
                     >
                       <option value="Deluxe Twin Bed">Deluxe Twin Bed (Standard)</option>
                       <option value="Family Suite Ocean View">Family Suite Ocean View (VIP)</option>
@@ -974,7 +974,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                         placeholder="Nhập tên phòng tùy chỉnh (ví dụ: Bungalow Beachfront)..."
                         value={customRoomTypeName}
                         onChange={(e) => setCustomRoomTypeName(e.target.value)}
-                        className="w-full bg-amber-50/50 border border-amber-200 p-2.5 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-100 focus:border-amber-500 transition-all font-medium text-slate-800"
+                        className="w-full bg-amber-50/50 border border-amber-200 p-2.5 text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-100 focus:border-amber-500 transition-all font-medium text-slate-800"
                         required
                       />
                     )}
@@ -982,7 +982,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
+                  <label className="block text-sm font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
                     4. Ghi Chú Sắp Phòng
                   </label>
                   <input
@@ -990,7 +990,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                     placeholder="Ghi chú thêm cho phòng này..."
                     value={roomNotes}
                     onChange={(e) => setRoomNotes(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 p-2.5 text-xs rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 transition-all text-slate-700"
+                    className="w-full bg-slate-50 border border-slate-200 p-2.5 text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 transition-all text-slate-700"
                   />
                 </div>
               </div>
@@ -1008,13 +1008,13 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                   setEditingRoomNo(null);
                   setIsFormOpen(false);
                 }}
-                className="text-xs text-slate-500 font-bold px-4 py-2 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors"
+                className="text-sm text-slate-500 font-bold px-4 py-2 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors"
               >
                 Hủy bỏ
               </button>
               <button
                 type="submit"
-                className="text-xs text-white bg-[#059669] hover:bg-[#047857] font-black uppercase px-6 py-2.5 rounded-xl cursor-pointer shadow-md active:scale-95 transition-all"
+                className="text-sm text-white bg-[#059669] hover:bg-[#047857] font-black uppercase px-6 py-2.5 rounded-xl cursor-pointer shadow-md active:scale-95 transition-all"
               >
                 {editingRoomNo ? "Cập nhật phòng" : "Lưu xếp phòng"}
               </button>
@@ -1028,20 +1028,20 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
         {/* Room Stats */}
         <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-100 p-4 shadow-sm grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="text-center p-2 bg-emerald-50/40 rounded-xl border border-emerald-100/20">
-            <p className="text-[9px] text-slate-400 font-black uppercase tracking-wider">Tổng phòng cấp</p>
-            <p className="text-lg font-black text-[#059669] mt-0.5">{stats.totalRooms}</p>
+            <p className="text-[11px] text-slate-400 font-black uppercase tracking-wider">Tổng phòng cấp</p>
+            <p className="text-xl font-black text-[#059669] mt-0.5">{stats.totalRooms}</p>
           </div>
           <div className="text-center p-2 bg-blue-50/40 rounded-xl border border-blue-100/20">
-            <p className="text-[9px] text-slate-400 font-black uppercase tracking-wider">Phòng Gia Đình</p>
-            <p className="text-lg font-black text-blue-600 mt-0.5">{stats.familyCount}</p>
+            <p className="text-[11px] text-slate-400 font-black uppercase tracking-wider">Phòng Gia Đình</p>
+            <p className="text-xl font-black text-blue-600 mt-0.5">{stats.familyCount}</p>
           </div>
           <div className="text-center p-2 bg-purple-50/40 rounded-xl border border-purple-100/20">
-            <p className="text-[9px] text-slate-400 font-black uppercase tracking-wider">Phòng Ghép</p>
-            <p className="text-lg font-black text-purple-600 mt-0.5">{stats.otherCount}</p>
+            <p className="text-[11px] text-slate-400 font-black uppercase tracking-wider">Phòng Ghép</p>
+            <p className="text-xl font-black text-purple-600 mt-0.5">{stats.otherCount}</p>
           </div>
           <div className="text-center p-2 bg-amber-50/40 rounded-xl border border-amber-100/20">
-            <p className="text-[9px] text-slate-400 font-black uppercase tracking-wider">Chưa xếp phòng</p>
-            <p className={`text-lg font-black mt-0.5 ${unallocatedGuests.length > 0 ? "text-amber-600" : "text-slate-400"}`}>
+            <p className="text-[11px] text-slate-400 font-black uppercase tracking-wider">Chưa xếp phòng</p>
+            <p className={`text-xl font-black mt-0.5 ${unallocatedGuests.length > 0 ? "text-amber-600" : "text-slate-400"}`}>
               {unallocatedGuests.length} người
             </p>
           </div>
@@ -1058,7 +1058,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
               placeholder="Tìm theo tên bạn hoặc số phòng..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 transition-all"
+              className="w-full pl-9 pr-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 transition-all"
             />
           </div>
         </div>
@@ -1069,11 +1069,11 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
         <div className="bg-amber-50/60 border border-amber-200/50 rounded-2xl p-4.5 shadow-sm space-y-2.5">
           <div className="flex items-center gap-2 text-amber-800">
             <AlertCircle className="w-4.5 h-4.5 text-amber-500 shrink-0" />
-            <h4 className="text-xs font-black uppercase tracking-wider">
+            <h4 className="text-sm font-black uppercase tracking-wider">
               {isAdmin ? `Danh sách chưa được xếp phòng nghỉ (${unallocatedGuests.length}):` : `Danh sách chưa có phòng nghỉ (${unallocatedGuests.length}):`}
             </h4>
           </div>
-          <p className="text-[10px] text-slate-500">
+          <p className="text-xs text-slate-500">
             {isAdmin 
               ? "Ấn vào tên nhân viên để mở bộ sắp xếp phòng và tự động điền thông tin xếp phòng cho họ:" 
               : "Danh sách nhân viên chưa có số phòng cụ thể:"}
@@ -1091,7 +1091,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                   <button
                     key={reg.id}
                     onClick={() => handleQuickSelectUnallocated(reg.id, reg.employee.fullName)}
-                    className="bg-white hover:bg-emerald-50 border border-amber-200 hover:border-emerald-300 text-slate-700 px-3 py-1.5 rounded-xl text-xs font-semibold shadow-xs flex items-center gap-1.5 active:scale-95 transition-all text-left cursor-pointer group"
+                    className="bg-white hover:bg-emerald-50 border border-amber-200 hover:border-emerald-300 text-slate-700 px-3 py-1.5 rounded-xl text-sm font-semibold shadow-xs flex items-center gap-1.5 active:scale-95 transition-all text-left cursor-pointer group"
                   >
                     <User className="w-3 h-3 text-slate-400 group-hover:text-[#059669]" />
                     <span>
@@ -1104,7 +1104,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                 return (
                   <div
                     key={reg.id}
-                    className="bg-white border border-amber-100 text-slate-600 px-3 py-1.5 rounded-xl text-xs font-semibold shadow-xs flex items-center gap-1.5"
+                    className="bg-white border border-amber-100 text-slate-600 px-3 py-1.5 rounded-xl text-sm font-semibold shadow-xs flex items-center gap-1.5"
                   >
                     <User className="w-3 h-3 text-slate-400" />
                     <span>
@@ -1125,8 +1125,8 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
           <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 mx-auto mb-3">
             <Home className="w-5 h-5" />
           </div>
-          <h4 className="text-xs font-bold text-slate-700">Không tìm thấy phòng tương ứng</h4>
-          <p className="text-[10px] text-slate-400 mt-1">Vui lòng kiểm tra lại từ khóa tìm kiếm</p>
+          <h4 className="text-sm font-bold text-slate-700">Không tìm thấy phòng tương ứng</h4>
+          <p className="text-xs text-slate-400 mt-1">Vui lòng kiểm tra lại từ khóa tìm kiếm</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="room-allocation-grid">
@@ -1144,9 +1144,9 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                 }`}>
                   <div className="flex items-center gap-2">
                     <Key className={`w-4 h-4 ${room.roomType === "Family" ? "text-blue-500" : "text-purple-500"}`} />
-                    <span className="font-extrabold text-sm tracking-wide">{formatRoomNo(room.roomNo)}</span>
+                    <span className="font-extrabold text-base tracking-wide">{formatRoomNo(room.roomNo)}</span>
                   </div>
-                  <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded-full tracking-wider ${
+                  <span className={`text-[11px] font-black uppercase px-2 py-0.5 rounded-full tracking-wider ${
                     room.roomType === "Family" ? "bg-blue-100 text-blue-800" : "bg-purple-100 text-purple-800"
                   }`}>
                     {room.roomType === "Family" ? "Gia Đình" : (room.roomType === "Triple" ? "Phòng Ba" : "Phòng Ghép")}
@@ -1157,24 +1157,24 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                 <div className="p-4 space-y-3.5">
                   <div>
                     {room.roomTypeName !== "Family Suite Ocean View" && (
-                      <h4 className="text-xs font-extrabold text-slate-800">{room.roomTypeName}</h4>
+                      <h4 className="text-sm font-extrabold text-slate-800">{room.roomTypeName}</h4>
                     )}
                     {room.notes && room.notes !== "Phòng gia đình tiện nghi" && (
-                      <p className="text-[9px] text-slate-400 mt-0.5 italic">{room.notes}</p>
+                      <p className="text-[11px] text-slate-400 mt-0.5 italic">{room.notes}</p>
                     )}
                   </div>
 
                   {/* Occupants list */}
                   <div className="space-y-2">
-                    <p className="text-[9px] font-black text-slate-400 uppercase tracking-wider">Thành viên phòng ({room.guests.length}):</p>
+                    <p className="text-[11px] font-black text-slate-400 uppercase tracking-wider">Thành viên phòng ({room.guests.length}):</p>
                     <div className="space-y-1.5">
                       {room.guests.map((g, idx) => (
-                        <div key={idx} className="flex items-center justify-between bg-slate-50 border border-slate-100 p-2 rounded-xl text-xs">
+                        <div key={idx} className="flex items-center justify-between bg-slate-50 border border-slate-100 p-2 rounded-xl text-sm">
                           <div className="flex items-center gap-2 min-w-0">
                             <User className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                             <span className="font-bold text-slate-700 truncate">{g.name}</span>
                           </div>
-                          <span className={`text-[8px] font-black uppercase px-1.5 py-0.5 rounded-md ${
+                          <span className={`text-[10px] font-black uppercase px-1.5 py-0.5 rounded-md ${
                             g.role.includes("Nhân viên") 
                               ? "bg-emerald-50 text-emerald-700 border border-emerald-100/50" 
                               : "bg-amber-50 text-amber-700 border border-amber-100/50"
@@ -1190,10 +1190,10 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
 
               {/* MANUAL ACTION BAR FOOTER FOR CUSTOM ALLOCATION */}
               {isAdmin && (
-                <div className="px-4 py-2.5 bg-slate-50/50 border-t border-slate-100 flex items-center justify-end gap-2.5 text-xs">
+                <div className="px-4 py-2.5 bg-slate-50/50 border-t border-slate-100 flex items-center justify-end gap-2.5 text-sm">
                   <button
                     onClick={() => handleEditRoom(room)}
-                    className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-500 hover:text-[#059669] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#059669] transition-colors cursor-pointer"
                     title="Chỉnh sửa phòng này"
                   >
                     <Edit3 className="w-3.5 h-3.5" />
@@ -1201,7 +1201,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
                   </button>
                   <button
                     onClick={() => handleDeleteRoom(room.roomNo)}
-                    className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-400 hover:text-rose-600 transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-slate-400 hover:text-rose-600 transition-colors cursor-pointer"
                     title="Xóa sắp xếp phòng nghỉ"
                   >
                     <Trash2 className="w-3.5 h-3.5" />

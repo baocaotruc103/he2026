@@ -413,10 +413,10 @@ export default function App() {
               <Sun className="w-5 h-5 animate-pulse" />
             </div>
             <div>
-              <span className="font-extrabold tracking-tight text-white text-base flex items-center gap-1.5 uppercase">
+              <span className="font-extrabold tracking-tight text-white text-lg flex items-center gap-1.5 uppercase">
                 Summer Retreat 2026
               </span>
-              <span className="text-[10px] text-amber-300 font-semibold block uppercase tracking-wider -mt-0.5">
+              <span className="text-xs text-amber-300 font-semibold block uppercase tracking-wider -mt-0.5">
                 Cổng thông tin kỳ nghỉ hè nội bộ
               </span>
             </div>
@@ -435,23 +435,23 @@ export default function App() {
             <div className="p-6 bg-white border border-slate-200/80 rounded-2xl text-slate-800 shadow-md relative overflow-hidden flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/5 via-transparent to-transparent pointer-events-none" />
               <div className="space-y-1.5 z-10">
-                <span className="bg-emerald-100 text-[#059669] text-[9px] font-black uppercase px-2.5 py-1 rounded-full tracking-wider inline-block">
+                <span className="bg-emerald-100 text-[#059669] text-[11px] font-black uppercase px-2.5 py-1 rounded-full tracking-wider inline-block">
                   Cổng Thông Tin 2026
                 </span>
-                <h1 className="text-xl md:text-2xl font-black tracking-tight text-[#059669] uppercase mt-1">KỲ NGHỈ HÈ RỰC RỠ & GẮN KẾT YÊU THƯƠNG</h1>
-                <p className="text-xs md:text-sm text-slate-600 max-w-xl leading-relaxed">
+                <h1 className="text-2xl md:text-3xl font-black tracking-tight text-[#059669] uppercase mt-1">KỲ NGHỈ HÈ RỰC RỠ & GẮN KẾT YÊU THƯƠNG</h1>
+                <p className="text-sm md:text-base text-slate-600 max-w-xl leading-relaxed">
                   Chào đón các thành viên đại gia đình khoa Hồi sức ngoại tham gia chuyến hành trình nghỉ dưỡng mùa hè. Hãy điền thông tin chi tiết của bạn và người thân để ban tổ chức chuẩn bị chu đáo nhất.
                 </p>
               </div>
               
               <div className="flex flex-col gap-2 shrink-0 z-10 w-full md:w-auto min-w-[220px]">
-                <div className="bg-[#059669] border border-[#047857]/20 px-4 py-2.5 rounded-xl text-xs font-semibold shadow-sm">
-                  <p className="text-emerald-200 uppercase tracking-wider text-[10px] font-bold">Thời gian diễn ra</p>
-                  <p className="text-white mt-0.5 font-semibold text-xs">10/07 - 12/07/2026</p>
+                <div className="bg-[#059669] border border-[#047857]/20 px-4 py-2.5 rounded-xl text-sm font-semibold shadow-sm">
+                  <p className="text-emerald-200 uppercase tracking-wider text-xs font-bold">Thời gian diễn ra</p>
+                  <p className="text-white mt-0.5 font-semibold text-sm">10/07 - 12/07/2026</p>
                 </div>
-                <div className="bg-[#059669] border border-[#047857]/20 px-4 py-2.5 rounded-xl text-xs font-semibold shadow-sm">
-                  <p className="text-emerald-200 uppercase tracking-wider text-[10px] font-bold">Địa điểm</p>
-                  <p className="text-white mt-0.5 font-semibold text-xs">Ruby star Beach Quynh Resort</p>
+                <div className="bg-[#059669] border border-[#047857]/20 px-4 py-2.5 rounded-xl text-sm font-semibold shadow-sm">
+                  <p className="text-emerald-200 uppercase tracking-wider text-xs font-bold">Địa điểm</p>
+                  <p className="text-white mt-0.5 font-semibold text-sm">Ruby star Beach Quynh Resort</p>
                 </div>
               </div>
             </div>
@@ -463,12 +463,12 @@ export default function App() {
                 <div className="absolute right-[-10px] bottom-[-10px] opacity-15">
                   <Users className="w-20 h-20" />
                 </div>
-                <p className="text-[10px] text-emerald-100 font-extrabold uppercase tracking-wider">Tổng Quân Số</p>
-                <p className="text-2xl font-black mt-1">
+                <p className="text-xs text-emerald-100 font-extrabold uppercase tracking-wider">Tổng Quân Số</p>
+                <p className="text-3xl font-black mt-1">
                   {homepageStats.totalParticipants}{" "}
-                  <span className="text-xs font-normal text-emerald-200">người</span>
+                  <span className="text-sm font-normal text-emerald-200">người</span>
                 </p>
-                <p className="text-[10px] text-emerald-200 font-medium mt-1.5">
+                <p className="text-xs text-emerald-200 font-medium mt-1.5">
                   NV: {homepageStats.totalEmployees} • TN: {homepageStats.totalCompanions}
                 </p>
               </div>
@@ -479,9 +479,9 @@ export default function App() {
                   <UserCheck className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Nhân viên</p>
-                  <p className="text-xl font-black text-slate-800 mt-0.5">
-                    {homepageStats.totalEmployees} <span className="text-xs font-normal text-slate-500">người</span>
+                  <p className="text-xs text-slate-400 font-extrabold uppercase tracking-wider">Nhân viên</p>
+                  <p className="text-2xl font-black text-slate-800 mt-0.5">
+                    {homepageStats.totalEmployees} <span className="text-sm font-normal text-slate-500">người</span>
                   </p>
                 </div>
               </div>
@@ -492,9 +492,9 @@ export default function App() {
                   <Heart className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Thân nhân</p>
-                  <p className="text-xl font-black text-slate-800 mt-0.5">
-                    {homepageStats.totalCompanions} <span className="text-xs font-normal text-slate-500">người</span>
+                  <p className="text-xs text-slate-400 font-extrabold uppercase tracking-wider">Thân nhân</p>
+                  <p className="text-2xl font-black text-slate-800 mt-0.5">
+                    {homepageStats.totalCompanions} <span className="text-sm font-normal text-slate-500">người</span>
                   </p>
                 </div>
               </div>
@@ -505,9 +505,9 @@ export default function App() {
                   <Activity className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Tuổi trung bình</p>
-                  <p className="text-xl font-black text-slate-800 mt-0.5">
-                    {homepageStats.avgAge} <span className="text-xs font-normal text-slate-500">tuổi</span>
+                  <p className="text-xs text-slate-400 font-extrabold uppercase tracking-wider">Tuổi trung bình</p>
+                  <p className="text-2xl font-black text-slate-800 mt-0.5">
+                    {homepageStats.avgAge} <span className="text-sm font-normal text-slate-500">tuổi</span>
                   </p>
                 </div>
               </div>
@@ -515,7 +515,7 @@ export default function App() {
 
             {/* NAVIGATION BUTTONS GRID (6 CORE SECTIONS) */}
             <div className="space-y-3.5">
-              <h3 className="text-xs font-extrabold text-slate-400 uppercase tracking-wider">Danh mục cổng thông tin</h3>
+              <h3 className="text-sm font-extrabold text-slate-400 uppercase tracking-wider">Danh mục cổng thông tin</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="homepage-navigation-grid">
                 
                 {/* 1. Lịch trình */}
@@ -528,10 +528,10 @@ export default function App() {
                     <Sun className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-orange-600 transition-colors flex items-center gap-1.5">
+                    <h4 className="font-extrabold text-base text-slate-800 group-hover:text-orange-600 transition-colors flex items-center gap-1.5">
                       Lịch trình du lịch hè
                     </h4>
-                    <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
+                    <p className="text-[13px] text-slate-500 leading-relaxed mt-1">
                       Xem chi tiết kế hoạch các hoạt động, thời gian biểu và điểm đến trong suốt 3 ngày 2 đêm của chuyến đi.
                     </p>
                   </div>
@@ -547,10 +547,10 @@ export default function App() {
                     <Users className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-blue-600 transition-colors flex items-center gap-1.5">
+                    <h4 className="font-extrabold text-base text-slate-800 group-hover:text-blue-600 transition-colors flex items-center gap-1.5">
                       Danh sách đoàn
                     </h4>
-                    <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
+                    <p className="text-[13px] text-slate-500 leading-relaxed mt-1">
                       Tra cứu, tìm kiếm danh sách toàn bộ cán bộ khoa Hồi sức ngoại và người thân đã đăng ký tham gia kỳ nghỉ mát 2026.
                     </p>
                   </div>
@@ -566,10 +566,10 @@ export default function App() {
                     <Bed className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-purple-600 transition-colors flex items-center gap-1.5">
+                    <h4 className="font-extrabold text-base text-slate-800 group-hover:text-purple-600 transition-colors flex items-center gap-1.5">
                       Thông tin phòng
                     </h4>
-                    <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
+                    <p className="text-[13px] text-slate-500 leading-relaxed mt-1">
                       Xem danh sách sắp xếp phân phòng ngủ tự động tại Resort. Các gia đình được xếp phòng VIP, nhân viên đơn lẻ được ghép đôi phòng tiện nghi.
                     </p>
                   </div>
@@ -585,10 +585,10 @@ export default function App() {
                     <Compass className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-amber-600 transition-colors flex items-center gap-1.5">
+                    <h4 className="font-extrabold text-base text-slate-800 group-hover:text-amber-600 transition-colors flex items-center gap-1.5">
                       Danh sách theo xe
                     </h4>
-                    <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
+                    <p className="text-[13px] text-slate-500 leading-relaxed mt-1">
                       Xem phân bổ chỗ ngồi hành khách theo Xe số 1 và Xe số 2. Đảm bảo toàn bộ các thành viên trong gia đình luôn di chuyển cùng nhau.
                     </p>
                   </div>
@@ -604,10 +604,10 @@ export default function App() {
                     <Truck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-rose-600 transition-colors flex items-center gap-1.5">
+                    <h4 className="font-extrabold text-base text-slate-800 group-hover:text-rose-600 transition-colors flex items-center gap-1.5">
                       Thông tin lái xe
                     </h4>
-                    <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
+                    <p className="text-[13px] text-slate-500 leading-relaxed mt-1">
                       Tra cứu thông tin liên lạc của các tài xế, số điện thoại trưởng xe điều phối từng đoàn xe, giờ giấc xuất phát và điểm đón chính xác.
                     </p>
                   </div>
@@ -623,10 +623,10 @@ export default function App() {
                     <Hotel className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-[#059669] transition-colors flex items-center gap-1.5">
+                    <h4 className="font-extrabold text-base text-slate-800 group-hover:text-[#059669] transition-colors flex items-center gap-1.5">
                       Thông tin Resort
                     </h4>
-                    <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
+                    <p className="text-[13px] text-slate-500 leading-relaxed mt-1">
                       Khám phá bãi biển Quỳnh Nghĩa, tiện ích phòng ốc, các khu hoạt động teambuilding và lưu ý chuẩn bị hành lý trước chuyến đi nghỉ mát.
                     </p>
                   </div>
@@ -637,15 +637,15 @@ export default function App() {
             {/* REGISTRATION BUTTON AT BOTTOM */}
             <div className="flex flex-col items-center justify-center p-6 bg-emerald-50/50 border border-emerald-100/30 rounded-2xl text-center space-y-4 mt-8" id="registration-action-container">
               <div className="space-y-1">
-                <h3 className="text-sm font-extrabold text-slate-800">BẠN CHƯA ĐĂNG KÝ THÔNG TIN?</h3>
-                <p className="text-xs text-slate-500">Đăng ký ngay hôm nay để nhận thông báo sắp xếp phòng nghỉ và phương tiện xe đưa đón sớm nhất.</p>
+                <h3 className="text-base font-extrabold text-slate-800">BẠN CHƯA ĐĂNG KÝ THÔNG TIN?</h3>
+                <p className="text-sm text-slate-500">Đăng ký ngay hôm nay để nhận thông báo sắp xếp phòng nghỉ và phương tiện xe đưa đón sớm nhất.</p>
               </div>
               <button
                 onClick={() => {
                   setEditingRegistration(null);
                   setIsFormOpen(true);
                 }}
-                className="group relative inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#059669] hover:bg-[#047857] text-white font-black rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all transform duration-250 cursor-pointer text-xs tracking-wider active:scale-95"
+                className="group relative inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#059669] hover:bg-[#047857] text-white font-black rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all transform duration-250 cursor-pointer text-sm tracking-wider active:scale-95"
                 id="open-registration-form-btn"
               >
                 <Plus className="w-4 h-4 font-bold group-hover:scale-110 transition-transform" />
@@ -659,13 +659,13 @@ export default function App() {
             <div className="hidden sm:flex items-center justify-between bg-white border border-slate-200/60 px-5 py-4.5 rounded-2xl shadow-sm">
               <button
                 onClick={() => setCurrentPage("home")}
-                className="inline-flex items-center gap-2 text-xs font-black text-slate-600 hover:text-[#059669] transition-colors cursor-pointer bg-slate-50 hover:bg-emerald-50 px-4 py-2 rounded-xl border border-slate-200 hover:border-emerald-100 shadow-sm active:scale-95"
+                className="inline-flex items-center gap-2 text-sm font-black text-slate-600 hover:text-[#059669] transition-colors cursor-pointer bg-slate-50 hover:bg-emerald-50 px-4 py-2 rounded-xl border border-slate-200 hover:border-emerald-100 shadow-sm active:scale-95"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Quay lại
               </button>
               
-              <div className="hidden sm:flex items-center gap-1.5 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+              <div className="hidden sm:flex items-center gap-1.5 text-sm text-slate-400 font-semibold uppercase tracking-wider">
                 <span className="cursor-pointer hover:text-[#059669]" onClick={() => setCurrentPage("home")}>Trang chủ</span>
                 <span>/</span>
                 <span className="text-[#059669]">
@@ -720,10 +720,10 @@ export default function App() {
                 {/* Modal Header */}
                 <div className="px-6 py-5 bg-[#059669] text-white flex items-center justify-between">
                   <div>
-                    <h3 className="font-extrabold text-base tracking-tight uppercase">
+                    <h3 className="font-extrabold text-lg tracking-tight uppercase">
                       {editingRegistration ? "Cập nhật thông tin đăng ký" : "Đăng ký thông tin"}
                     </h3>
-                    <p className="text-[11px] text-sky-100 mt-0.5">
+                    <p className="text-[13px] text-sky-100 mt-0.5">
                       {editingRegistration ? "Chỉnh sửa thông tin đi nghỉ hè của nhân viên" : "Nhập thông tin nhân viên và người thân đi cùng"}
                     </p>
                   </div>
@@ -762,7 +762,7 @@ export default function App() {
               className="flex flex-col items-center justify-center text-slate-500 hover:text-[#059669] active:scale-95 transition-all cursor-pointer group"
             >
               <ArrowLeft className="w-5 h-5 text-slate-500 group-hover:text-[#059669] transition-colors" />
-              <span className="text-[11px] font-bold tracking-tight mt-1 transition-colors group-hover:text-[#059669]">Quay lại</span>
+              <span className="text-[13px] font-bold tracking-tight mt-1 transition-colors group-hover:text-[#059669]">Quay lại</span>
             </button>
           )}
 
@@ -775,7 +775,7 @@ export default function App() {
             }`}
           >
             <Home className={`w-5 h-5 transition-colors ${currentPage === "home" ? "text-[#059669]" : "text-slate-500 group-hover:text-[#059669]"}`} />
-            <span className={`text-[11px] tracking-tight mt-1 transition-colors ${currentPage === "home" ? "text-[#059669] font-black" : "font-semibold text-slate-500 group-hover:text-[#059669]"}`}>Trang chủ</span>
+            <span className={`text-[13px] tracking-tight mt-1 transition-colors ${currentPage === "home" ? "text-[#059669] font-black" : "font-semibold text-slate-500 group-hover:text-[#059669]"}`}>Trang chủ</span>
           </button>
         </div>
       </div>
@@ -815,8 +815,8 @@ export default function App() {
               )}
 
               <div className="flex-1">
-                <p className="font-bold text-xs leading-snug">{t.title}</p>
-                <p className="text-[11px] opacity-90 mt-0.5 leading-relaxed">{t.message}</p>
+                <p className="font-bold text-sm leading-snug">{t.title}</p>
+                <p className="text-[13px] opacity-90 mt-0.5 leading-relaxed">{t.message}</p>
               </div>
             </motion.div>
           ))}

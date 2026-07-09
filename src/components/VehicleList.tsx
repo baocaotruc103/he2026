@@ -311,14 +311,14 @@ export default function VehicleList({ registrations }: VehicleListProps) {
           <Truck className="w-5 h-5" />
         </div>
         <div>
-          <h2 className="text-lg font-bold text-slate-800 uppercase tracking-tight">Danh sách sắp xếp theo xe</h2>
-          <p className="text-xs text-slate-500 font-medium">Tra cứu xem bạn và thân nhân được phân bổ di chuyển ở xe nào</p>
+          <h2 className="text-xl font-bold text-slate-800 uppercase tracking-tight">Danh sách sắp xếp theo xe</h2>
+          <p className="text-sm text-slate-500 font-medium">Tra cứu xem bạn và thân nhân được phân bổ di chuyển ở xe nào</p>
         </div>
       </div>
 
       {/* Success Notification Banner */}
       {successMsg && (
-        <div className="bg-emerald-50 border border-emerald-200 text-[#059669] px-4 py-3 rounded-2xl flex items-center gap-2.5 shadow-sm text-xs font-semibold animate-fadeIn">
+        <div className="bg-emerald-50 border border-emerald-200 text-[#059669] px-4 py-3 rounded-2xl flex items-center gap-2.5 shadow-sm text-sm font-semibold animate-fadeIn">
           <Check className="w-4 h-4 shrink-0 bg-emerald-100 p-0.5 rounded-full" />
           <span>{successMsg}</span>
         </div>
@@ -326,7 +326,7 @@ export default function VehicleList({ registrations }: VehicleListProps) {
 
       {/* Database Error Notification Banner */}
       {errMsg && (
-        <div className="bg-rose-50 border border-rose-200 text-rose-800 px-4 py-3.5 rounded-2xl flex items-start gap-2.5 shadow-sm text-xs font-semibold animate-fadeIn">
+        <div className="bg-rose-50 border border-rose-200 text-rose-800 px-4 py-3.5 rounded-2xl flex items-start gap-2.5 shadow-sm text-sm font-semibold animate-fadeIn">
           <AlertCircle className="w-4 h-4 shrink-0 text-rose-600 mt-0.5" />
           <div className="space-y-1">
             <p className="font-extrabold uppercase tracking-wide text-rose-700">Lỗi đồng bộ dữ liệu xe:</p>
@@ -342,17 +342,17 @@ export default function VehicleList({ registrations }: VehicleListProps) {
             <div className="flex items-center gap-2">
               <Settings className="w-5 h-5 text-emerald-600 shrink-0 animate-spin-slow" />
               <div>
-                <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider">
+                <h3 className="text-sm font-black text-slate-800 uppercase tracking-wider">
                   Cấu hình phân xe (Chỉ hiển thị ở /admin)
                 </h3>
-                <p className="text-[10px] text-slate-400 font-semibold">
+                <p className="text-xs text-slate-400 font-semibold">
                   Tích chọn nhân viên đi Xe số 1. Người không chọn sẽ tự động xếp vào Xe số 2. Toàn bộ người thân sẽ được xếp đi cùng xe với nhân viên đó.
                 </p>
               </div>
             </div>
             <button
               onClick={handleResetVehicles}
-              className="inline-flex items-center gap-1 text-[10px] font-black uppercase text-rose-600 bg-rose-50 hover:bg-rose-100 border border-rose-200/50 px-3 py-1.5 rounded-xl cursor-pointer shadow-xs active:scale-95 transition-all self-start sm:self-center shrink-0"
+              className="inline-flex items-center gap-1 text-xs font-black uppercase text-rose-600 bg-rose-50 hover:bg-rose-100 border border-rose-200/50 px-3 py-1.5 rounded-xl cursor-pointer shadow-xs active:scale-95 transition-all self-start sm:self-center shrink-0"
             >
               <RefreshCw className="w-3 h-3" />
               Khôi phục mặc định
@@ -363,27 +363,27 @@ export default function VehicleList({ registrations }: VehicleListProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-emerald-50/50 border border-emerald-100/60 p-3.5 rounded-xl flex items-center justify-between">
               <div>
-                <p className="text-[10px] font-extrabold text-emerald-800 uppercase tracking-wider">Xe số 1 (Xe 45 chỗ)</p>
-                <p className="text-xs text-slate-500 font-semibold">Khuyến nghị tải: ≤ 45 người</p>
+                <p className="text-xs font-extrabold text-emerald-800 uppercase tracking-wider">Xe số 1 (Xe 45 chỗ)</p>
+                <p className="text-sm text-slate-500 font-semibold">Khuyến nghị tải: ≤ 45 người</p>
               </div>
               <div className="text-right">
-                <span className={`text-base font-black ${counts.bus1 > 45 ? "text-rose-600 animate-pulse" : "text-emerald-700"}`}>
+                <span className={`text-lg font-black ${counts.bus1 > 45 ? "text-rose-600 animate-pulse" : "text-emerald-700"}`}>
                   {counts.bus1}
                 </span>
-                <span className="text-xs text-slate-400 font-bold"> / 45 ghế</span>
+                <span className="text-sm text-slate-400 font-bold"> / 45 ghế</span>
               </div>
             </div>
 
             <div className="bg-blue-50/50 border border-blue-100/60 p-3.5 rounded-xl flex items-center justify-between">
               <div>
-                <p className="text-[10px] font-extrabold text-blue-800 uppercase tracking-wider">Xe số 2 (Xe 29 chỗ)</p>
-                <p className="text-xs text-slate-500 font-semibold">Khuyến nghị tải: ≤ 29 người</p>
+                <p className="text-xs font-extrabold text-blue-800 uppercase tracking-wider">Xe số 2 (Xe 29 chỗ)</p>
+                <p className="text-sm text-slate-500 font-semibold">Khuyến nghị tải: ≤ 29 người</p>
               </div>
               <div className="text-right">
-                <span className={`text-base font-black ${counts.bus2 > 29 ? "text-rose-600 animate-pulse" : "text-blue-700"}`}>
+                <span className={`text-lg font-black ${counts.bus2 > 29 ? "text-rose-600 animate-pulse" : "text-blue-700"}`}>
                   {counts.bus2}
                 </span>
-                <span className="text-xs text-slate-400 font-bold"> / 29 ghế</span>
+                <span className="text-sm text-slate-400 font-bold"> / 29 ghế</span>
               </div>
             </div>
           </div>
@@ -398,7 +398,7 @@ export default function VehicleList({ registrations }: VehicleListProps) {
               placeholder="Tìm nhanh nhân viên để xếp xe..."
               value={adminSearchTerm}
               onChange={(e) => setAdminSearchTerm(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 transition-all"
+              className="w-full pl-9 pr-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 transition-all"
             />
           </div>
 
@@ -423,14 +423,14 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                     className="w-4 h-4 text-[#059669] border-slate-300 rounded focus:ring-emerald-500 accent-[#059669] cursor-pointer"
                   />
                   <div className="min-w-0 flex-1">
-                    <p className="text-xs font-extrabold truncate">{reg.employee.fullName}</p>
-                    <p className="text-[10px] text-slate-400 font-bold mt-0.5">
+                    <p className="text-sm font-extrabold truncate">{reg.employee.fullName}</p>
+                    <p className="text-xs text-slate-400 font-bold mt-0.5">
                       {reg.companions.length > 0 
                         ? `+ ${reg.companions.length} thân nhân (${totalCount} người)` 
                         : "Đi một mình"}
                     </p>
                   </div>
-                  <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded-full shrink-0 ${
+                  <span className={`text-[11px] font-black uppercase px-2 py-0.5 rounded-full shrink-0 ${
                     isChecked ? "bg-emerald-100 text-emerald-800" : "bg-blue-50 text-blue-800"
                   }`}>
                     {isChecked ? "Xe 1" : "Xe 2"}
@@ -448,7 +448,7 @@ export default function VehicleList({ registrations }: VehicleListProps) {
         <div className="flex gap-1.5 bg-slate-50 p-1.5 rounded-xl w-full md:w-auto overflow-x-auto" id="bus-tabs">
           <button
             onClick={() => setActiveTab("all")}
-            className={`px-4 py-2 text-xs font-bold rounded-lg cursor-pointer transition-all ${
+            className={`px-4 py-2 text-sm font-bold rounded-lg cursor-pointer transition-all ${
               activeTab === "all"
                 ? "bg-[#059669] text-white shadow-sm"
                 : "text-slate-600 hover:text-slate-900"
@@ -458,7 +458,7 @@ export default function VehicleList({ registrations }: VehicleListProps) {
           </button>
           <button
             onClick={() => setActiveTab("xe-1")}
-            className={`px-4 py-2 text-xs font-bold rounded-lg cursor-pointer transition-all ${
+            className={`px-4 py-2 text-sm font-bold rounded-lg cursor-pointer transition-all ${
               activeTab === "xe-1"
                 ? "bg-[#059669] text-white shadow-sm"
                 : "text-slate-600 hover:text-slate-900"
@@ -468,7 +468,7 @@ export default function VehicleList({ registrations }: VehicleListProps) {
           </button>
           <button
             onClick={() => setActiveTab("xe-2")}
-            className={`px-4 py-2 text-xs font-bold rounded-lg cursor-pointer transition-all ${
+            className={`px-4 py-2 text-sm font-bold rounded-lg cursor-pointer transition-all ${
               activeTab === "xe-2"
                 ? "bg-[#059669] text-white shadow-sm"
                 : "text-slate-600 hover:text-slate-900"
@@ -488,7 +488,7 @@ export default function VehicleList({ registrations }: VehicleListProps) {
             placeholder="Tìm theo tên hành khách..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-9 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 transition-all"
+            className="w-full pl-9 pr-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-500 transition-all"
           />
         </div>
       </div>
@@ -506,23 +506,23 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                    <h3 className="text-sm font-extrabold text-slate-800">{bus.busName}</h3>
-                    <span className="bg-emerald-50 text-emerald-700 text-[9px] font-black uppercase px-2 py-0.5 rounded-md border border-emerald-100">
+                    <h3 className="text-base font-extrabold text-slate-800">{bus.busName}</h3>
+                    <span className="bg-emerald-50 text-emerald-700 text-[11px] font-black uppercase px-2 py-0.5 rounded-md border border-emerald-100">
                       {bus.plate}
                     </span>
                   </div>
-                  <p className="text-[10px] text-slate-400">
+                  <p className="text-xs text-slate-400">
                     Trưởng xe điều hành: <strong>{bus.leaderName}</strong> ({bus.leaderPhone})
                   </p>
                 </div>
-                <div className="text-right text-[11px] text-slate-500 font-bold bg-white border border-slate-200/60 px-3 py-1 rounded-lg">
+                <div className="text-right text-[13px] text-slate-500 font-bold bg-white border border-slate-200/60 px-3 py-1 rounded-lg">
                   Sức chứa: {bus.passengers.length}/{bus.capacity} hành khách
                 </div>
               </div>
 
               {/* Passengers Table / Mobile Cards */}
               {bus.passengers.length === 0 ? (
-                <div className="p-8 text-center text-xs text-slate-400">
+                <div className="p-8 text-center text-sm text-slate-400">
                   {searchTerm.trim() ? "Không tìm thấy hành khách nào phù hợp từ khóa." : "Chưa có hành khách nào được xếp xe."}
                 </div>
               ) : (
@@ -531,7 +531,7 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                   <div className="hidden md:block overflow-x-auto">
                     <table className="w-full text-left border-collapse">
                       <thead>
-                        <tr className="bg-slate-50/50 text-[10px] font-black uppercase tracking-wider text-slate-400 border-b border-slate-100">
+                        <tr className="bg-slate-50/50 text-xs font-black uppercase tracking-wider text-slate-400 border-b border-slate-100">
                           <th className="py-3 px-6 w-16 text-center">STT</th>
                           <th className="py-3 px-6">Họ và tên</th>
                           <th className="py-3 px-6">Phân loại</th>
@@ -539,7 +539,7 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                           <th className="py-3 px-6 text-right">Số điện thoại</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-slate-100 text-xs text-slate-700">
+                      <tbody className="divide-y divide-slate-100 text-sm text-slate-700">
                         {bus.passengers.map((passenger, pIdx) => (
                           <tr key={pIdx} className="hover:bg-slate-50/50 transition-colors">
                             <td className="py-3 px-6 text-center font-bold text-slate-400">{pIdx + 1}</td>
@@ -548,11 +548,11 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                                 {passenger.name}
                               </div>
                               {passenger.subName && (
-                                <div className="text-[10.5px] text-slate-500 font-medium mt-0.5">{passenger.subName}</div>
+                                <div className="text-[12.5px] text-slate-500 font-medium mt-0.5">{passenger.subName}</div>
                               )}
                             </td>
                             <td className="py-3 px-6">
-                              <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded-md ${
+                              <span className={`text-[11px] font-black uppercase px-2 py-0.5 rounded-md ${
                                 passenger.role === "Nhân viên"
                                   ? "bg-emerald-50 text-emerald-700 border border-emerald-100/50"
                                   : "bg-amber-50 text-amber-700 border border-amber-100/50"
@@ -564,7 +564,7 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                             <td className="py-3 px-6 text-right">
                               <a
                                 href={`tel:${passenger.phone}`}
-                                className="inline-flex items-center gap-1 text-[10px] font-extrabold text-[#059669] hover:underline"
+                                className="inline-flex items-center gap-1 text-xs font-extrabold text-[#059669] hover:underline"
                               >
                                 {passenger.phone}
                               </a>
@@ -582,33 +582,33 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                         <div className="space-y-1">
                           <div className="flex flex-col">
                             <div className="flex items-center gap-2">
-                              <span className="text-[10px] font-bold text-slate-400">#{pIdx + 1}</span>
-                              <span className={`font-extrabold text-xs ${passenger.role === "Nhân viên" ? "text-[#059669]" : "text-slate-800"}`}>
+                              <span className="text-xs font-bold text-slate-400">#{pIdx + 1}</span>
+                              <span className={`font-extrabold text-sm ${passenger.role === "Nhân viên" ? "text-[#059669]" : "text-slate-800"}`}>
                                 {passenger.name}
                               </span>
                             </div>
                             {passenger.subName && (
-                              <div className="text-[10px] text-slate-500 mt-0.5 ml-[26px]">
+                              <div className="text-xs text-slate-500 mt-0.5 ml-[26px]">
                                 {passenger.subName}
                               </div>
                             )}
                           </div>
                           <div className="flex items-center gap-2">
-                            <span className={`text-[8px] font-black uppercase px-1.5 py-0.5 rounded-md ${
+                            <span className={`text-[10px] font-black uppercase px-1.5 py-0.5 rounded-md ${
                               passenger.role === "Nhân viên"
                                 ? "bg-emerald-50 text-emerald-700 border border-emerald-100/30"
                                 : "bg-amber-50 text-amber-700 border border-amber-100/30"
                             }`}>
                               {passenger.role}
                             </span>
-                            <span className="text-[10px] text-slate-400 italic">{passenger.detail}</span>
+                            <span className="text-xs text-slate-400 italic">{passenger.detail}</span>
                           </div>
                         </div>
 
                         {/* 3D-styled green call button */}
                         <a
                           href={`tel:${passenger.phone}`}
-                          className="inline-flex items-center justify-center gap-1 text-[10px] font-extrabold text-white bg-[#059669] hover:bg-[#047857] px-3 py-1.5 rounded-xl border-b-[3px] border-[#036c4b] active:border-b-[1px] active:translate-y-[1px] transition-all shadow-sm cursor-pointer"
+                          className="inline-flex items-center justify-center gap-1 text-xs font-extrabold text-white bg-[#059669] hover:bg-[#047857] px-3 py-1.5 rounded-xl border-b-[3px] border-[#036c4b] active:border-b-[1px] active:translate-y-[1px] transition-all shadow-sm cursor-pointer"
                         >
                           <Phone className="w-3 h-3" />
                           Gọi ngay
@@ -624,14 +624,14 @@ export default function VehicleList({ registrations }: VehicleListProps) {
       </div>
 
       {/* Allocation policy */}
-      <div className="bg-amber-50/50 border border-amber-100/40 rounded-2xl p-4 flex gap-3 text-xs leading-relaxed text-slate-600">
+      <div className="bg-amber-50/50 border border-amber-100/40 rounded-2xl p-4 flex gap-3 text-sm leading-relaxed text-slate-600">
         <Info className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
         <div className="space-y-1">
           <p className="font-extrabold text-slate-700">Chính sách điều phối sắp xếp phương tiện:</p>
-          <p className="text-[11px] text-slate-500">
+          <p className="text-[13px] text-slate-500">
             • <strong>Tính gắn kết gia đình:</strong> Hệ thống luôn xếp toàn bộ thành viên trong cùng một phiếu đăng ký di chuyển trên cùng một chuyến xe để đảm bảo các gia đình luôn đồng hành cùng nhau.
           </p>
-          <p className="text-[11px] text-slate-500">
+          <p className="text-[13px] text-slate-500">
             • <strong>Điều chỉnh xe:</strong> Nếu anh/chị có nguyện vọng chuyển đổi xe để di chuyển cùng nhóm bạn hoặc đồng nghiệp khác, vui lòng liên hệ sớm với Ban tổ chức trước ngày khởi hành 03 ngày.
           </p>
         </div>
