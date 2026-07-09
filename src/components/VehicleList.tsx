@@ -81,6 +81,7 @@ export default function VehicleList({ registrations }: VehicleListProps) {
   // Sync with backend on mount & registration changes
   useEffect(() => {
     const fetchVehicleAllocations = async () => {
+      let useDirectFallback = false;
       try {
         const res = await fetch("/api/vehicle-allocations");
         if (res.ok) {
@@ -96,21 +97,40 @@ export default function VehicleList({ registrations }: VehicleListProps) {
               if (currentList && currentList.length > 0) {
                 await fetch("/api/vehicle-allocations", {
                   method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
+                  headers: { "Content-Type": "application/json" },
                   body: JSON.stringify(currentList),
                 });
               }
             }
           }
+        } else {
+          useDirectFallback = true;
         }
       } catch (err) {
-        console.error("Lỗi khi tải sơ đồ phân xe từ database:", err);
+        useDirectFallback = true;
+      }
+
+      if (useDirectFallback && supabaseUrl && supabaseAnonKey) {
+        import("@supabase/supabase-js").then(async ({ createClient }) => {
+          const clientSupabase = createClient(supabaseUrl, supabaseAnonKey);
+          try {
+            const { data, error } = await clientSupabase
+              .from("vehicle_allocations")
+              .select("xe1_reg_ids")
+              .eq("id", "current")
+              .single();
+            if (!error && data && Array.isArray(data.xe1_reg_ids) && data.xe1_reg_ids.length > 0) {
+              setXe1RegIds(data.xe1_reg_ids);
+              localStorage.setItem("custom_vehicle_xe1_reg_ids", JSON.stringify(data.xe1_reg_ids));
+            }
+          } catch (e) {
+            console.error("Lỗi khi tải từ Supabase:", e);
+          }
+        });
       }
     };
     fetchVehicleAllocations();
-  }, [registrations]);
+  }, [registrations, supabaseUrl, supabaseAnonKey]);
 
   const saveVehicleAllocations = async (updatedList: string[]) => {
     setXe1RegIds(updatedList);

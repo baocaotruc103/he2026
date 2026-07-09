@@ -107,6 +107,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
   // Sync with backend on mount
   useEffect(() => {
     const fetchAllocations = async () => {
+      let useDirectFallback = false;
       try {
         const res = await fetch("/api/room-allocations");
         if (res.ok) {
@@ -115,9 +116,30 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
             setCustomAllocations(data);
             localStorage.setItem("custom_room_allocations", JSON.stringify(data));
           }
+        } else {
+          useDirectFallback = true;
         }
       } catch (err) {
-        console.error("Lỗi khi tải sơ đồ xếp phòng từ database:", err);
+        useDirectFallback = true;
+      }
+
+      if (useDirectFallback && supabaseUrl && supabaseAnonKey) {
+        import("@supabase/supabase-js").then(async ({ createClient }) => {
+          const clientSupabase = createClient(supabaseUrl, supabaseAnonKey);
+          try {
+            const { data, error } = await clientSupabase
+              .from("room_allocations")
+              .select("allocations")
+              .eq("id", "current")
+              .single();
+            if (!error && data && Array.isArray(data.allocations)) {
+              setCustomAllocations(data.allocations);
+              localStorage.setItem("custom_room_allocations", JSON.stringify(data.allocations));
+            }
+          } catch (e) {
+            console.error("Lỗi khi tải từ Supabase:", e);
+          }
+        });
       }
     };
     
@@ -135,7 +157,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
 
     fetchAllocations();
     fetchDbConfig();
-  }, []);
+  }, [supabaseUrl, supabaseAnonKey]);
 
   // Active allocations: ONLY use custom manual allocations
   const activeAllocations = useMemo<RoomAllocation[]>(() => {
