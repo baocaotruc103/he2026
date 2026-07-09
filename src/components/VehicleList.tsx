@@ -544,7 +544,9 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                           <tr key={pIdx} className="hover:bg-slate-50/50 transition-colors">
                             <td className="py-3 px-6 text-center font-bold text-slate-400">{pIdx + 1}</td>
                             <td className="py-3 px-6">
-                              <div className="font-extrabold text-slate-800">{passenger.name}</div>
+                              <div className={`font-extrabold ${passenger.role === "Nhân viên" ? "text-[#059669]" : "text-slate-800"}`}>
+                                {passenger.name}
+                              </div>
                               {passenger.subName && (
                                 <div className="text-[10.5px] text-slate-500 font-medium mt-0.5">{passenger.subName}</div>
                               )}
@@ -581,7 +583,9 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                           <div className="flex flex-col">
                             <div className="flex items-center gap-2">
                               <span className="text-[10px] font-bold text-slate-400">#{pIdx + 1}</span>
-                              <span className="font-extrabold text-xs text-slate-800">{passenger.name}</span>
+                              <span className={`font-extrabold text-xs ${passenger.role === "Nhân viên" ? "text-[#059669]" : "text-slate-800"}`}>
+                                {passenger.name}
+                              </span>
                             </div>
                             {passenger.subName && (
                               <div className="text-[10px] text-slate-500 mt-0.5 ml-[26px]">
