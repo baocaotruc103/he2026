@@ -513,26 +513,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* REGISTRATION BUTTON BELOW BANNER */}
-            <div className="flex flex-col items-center justify-center p-6 bg-emerald-50/50 border border-emerald-100/30 rounded-2xl text-center space-y-4" id="registration-action-container">
-              <div className="space-y-1">
-                <h3 className="text-sm font-extrabold text-slate-800">BẠN CHƯA ĐĂNG KÝ THÔNG TIN?</h3>
-                <p className="text-xs text-slate-500">Đăng ký ngay hôm nay để nhận thông báo sắp xếp phòng nghỉ và phương tiện xe đưa đón sớm nhất.</p>
-              </div>
-              <button
-                onClick={() => {
-                  setEditingRegistration(null);
-                  setIsFormOpen(true);
-                }}
-                className="group relative inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#059669] hover:bg-[#047857] text-white font-black rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all transform duration-250 cursor-pointer text-xs tracking-wider active:scale-95"
-                id="open-registration-form-btn"
-              >
-                <Plus className="w-4 h-4 font-bold group-hover:scale-110 transition-transform" />
-                ĐĂNG KÝ THÔNG TIN
-              </button>
-            </div>
-
-            {/* NAVIGATION BUTTONS GRID (5 CORE SECTIONS) */}
+            {/* NAVIGATION BUTTONS GRID (6 CORE SECTIONS) */}
             <div className="space-y-3.5">
               <h3 className="text-xs font-extrabold text-slate-400 uppercase tracking-wider">Danh mục cổng thông tin</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="homepage-navigation-grid">
@@ -651,6 +632,25 @@ export default function App() {
                   </div>
                 </button>
               </div>
+            </div>
+
+            {/* REGISTRATION BUTTON AT BOTTOM */}
+            <div className="flex flex-col items-center justify-center p-6 bg-emerald-50/50 border border-emerald-100/30 rounded-2xl text-center space-y-4 mt-8" id="registration-action-container">
+              <div className="space-y-1">
+                <h3 className="text-sm font-extrabold text-slate-800">BẠN CHƯA ĐĂNG KÝ THÔNG TIN?</h3>
+                <p className="text-xs text-slate-500">Đăng ký ngay hôm nay để nhận thông báo sắp xếp phòng nghỉ và phương tiện xe đưa đón sớm nhất.</p>
+              </div>
+              <button
+                onClick={() => {
+                  setEditingRegistration(null);
+                  setIsFormOpen(true);
+                }}
+                className="group relative inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#059669] hover:bg-[#047857] text-white font-black rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all transform duration-250 cursor-pointer text-xs tracking-wider active:scale-95"
+                id="open-registration-form-btn"
+              >
+                <Plus className="w-4 h-4 font-bold group-hover:scale-110 transition-transform" />
+                ĐĂNG KÝ THÔNG TIN
+              </button>
             </div>
           </div>
         ) : (
