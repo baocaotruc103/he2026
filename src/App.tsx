@@ -11,6 +11,7 @@ import ResortInfo from "./components/ResortInfo";
 import RoomInfo from "./components/RoomInfo";
 import DriverInfo from "./components/DriverInfo";
 import VehicleList from "./components/VehicleList";
+import Itinerary from "./components/Itinerary";
 import { calculateAge } from "./utils";
 import { createClient } from "@supabase/supabase-js";
 
@@ -112,7 +113,7 @@ export default function App() {
   const [editingRegistration, setEditingRegistration] = useState<Registration | null>(null);
   const [supabaseConnected, setSupabaseConnected] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState<"home" | "resort" | "delegation" | "rooms" | "drivers" | "vehicles">("home");
+  const [currentPage, setCurrentPage] = useState<"home" | "itinerary" | "resort" | "delegation" | "rooms" | "drivers" | "vehicles">("home");
 
   // Statistics for homepage Cards
   const homepageStats = useMemo(() => {
@@ -558,7 +559,7 @@ export default function App() {
                 {/* 2. Danh sách đoàn */}
                 <button
                   onClick={() => setCurrentPage("delegation")}
-                  className="bg-white hover:bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm text-left hover:border-emerald-200 hover:-translate-y-1 transition-all cursor-pointer space-y-3 relative group overflow-hidden"
+                  className="bg-white hover:bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm text-left hover:border-blue-200 hover:-translate-y-1 transition-all cursor-pointer space-y-3 relative group overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-16 h-16 bg-blue-500/5 rounded-bl-full group-hover:bg-blue-500/10 transition-colors" />
                   <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100 shadow-sm">
@@ -615,7 +616,7 @@ export default function App() {
                 {/* 5. Danh sách theo xe */}
                 <button
                   onClick={() => setCurrentPage("vehicles")}
-                  className="bg-white hover:bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm text-left hover:border-amber-200 hover:-translate-y-1 transition-all cursor-pointer space-y-3 relative group overflow-hidden col-span-1 sm:col-span-2 lg:col-span-1"
+                  className="bg-white hover:bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm text-left hover:border-amber-200 hover:-translate-y-1 transition-all cursor-pointer space-y-3 relative group overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-16 h-16 bg-amber-500/5 rounded-bl-full group-hover:bg-amber-500/10 transition-colors" />
                   <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100 shadow-sm">
@@ -631,6 +632,24 @@ export default function App() {
                   </div>
                 </button>
 
+                {/* 6. Lịch trình */}
+                <button
+                  onClick={() => setCurrentPage("itinerary")}
+                  className="bg-white hover:bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm text-left hover:border-orange-200 hover:-translate-y-1 transition-all cursor-pointer space-y-3 relative group overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-orange-500/5 rounded-bl-full group-hover:bg-orange-500/10 transition-colors" />
+                  <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center border border-orange-100 shadow-sm">
+                    <Sun className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-orange-600 transition-colors flex items-center gap-1.5">
+                      Lịch trình du lịch hè
+                    </h4>
+                    <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
+                      Xem chi tiết kế hoạch các hoạt động, thời gian biểu và điểm đến trong suốt 3 ngày 2 đêm của chuyến đi.
+                    </p>
+                  </div>
+                </button>
               </div>
             </div>
           </div>
@@ -661,7 +680,8 @@ export default function App() {
 
             {/* RENDER ACTIVE PAGE */}
             <div className="animate-fadeIn">
-              {currentPage === "resort" && <ResortInfo />}
+              {currentPage === "itinerary" && <Itinerary />}
+          {currentPage === "resort" && <ResortInfo />}
               {currentPage === "delegation" && (
                 <Dashboard
                   registrations={registrations}
