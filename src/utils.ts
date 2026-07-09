@@ -49,7 +49,7 @@ export function exportToExcel(registrations: Registration[]) {
       "Họ và tên": reg.employee.fullName,
       "Ngày tháng năm sinh": formatDate(reg.employee.dob),
       "Số điện thoại": reg.employee.phone,
-      "Ghi chú": `Nhân viên` + (reg.notes ? ` - ${reg.notes}` : "")
+      "Ghi chú": ""
     });
 
     // Add companion rows
@@ -59,7 +59,7 @@ export function exportToExcel(registrations: Registration[]) {
         "Họ và tên": comp.fullName,
         "Ngày tháng năm sinh": formatDate(comp.dob),
         "Số điện thoại": comp.phone,
-        "Ghi chú": `Thân nhân (${comp.relationship} của ${reg.employee.fullName})`
+        "Ghi chú": ""
       });
     });
   });
