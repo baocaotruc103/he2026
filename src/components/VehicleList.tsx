@@ -507,7 +507,9 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
                     <h3 className="text-base font-extrabold text-slate-800">{bus.busName}</h3>
-                    <span className="bg-emerald-50 text-emerald-700 text-[11px] font-black uppercase px-2 py-0.5 rounded-md border border-emerald-100">
+                  </div>
+                  <div className="mt-1.5 mb-1.5">
+                    <span className="bg-emerald-50 text-emerald-700 text-lg font-black uppercase px-2.5 py-1 rounded-md border border-emerald-100 inline-block shadow-sm">
                       {bus.plate}
                     </span>
                   </div>
