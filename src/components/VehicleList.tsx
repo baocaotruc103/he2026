@@ -8,6 +8,7 @@ interface VehicleListProps {
 
 interface BusPassenger {
   name: string;
+  subName?: string;
   phone: string;
   role: "Nhân viên" | "Thân nhân";
   detail: string; // e.g. "Trưởng phòng" or Relationship like "Vợ"
@@ -227,7 +228,7 @@ export default function VehicleList({ registrations }: VehicleListProps) {
 
       // Add main employee
       busDest.push({
-        name: reg.employee.fullName,
+        name: reg.employee.fullName.toUpperCase(),
         phone: reg.employee.phone,
         role: "Nhân viên",
         detail: reg.department || "Hồi sức ngoại",
@@ -238,9 +239,10 @@ export default function VehicleList({ registrations }: VehicleListProps) {
       reg.companions.forEach((c) => {
         busDest.push({
           name: c.fullName,
+          subName: `(${c.relationship} của ${reg.employee.fullName})`,
           phone: c.phone || reg.employee.phone, // fallback to employee phone
           role: "Thân nhân",
-          detail: `Thân nhân (${c.relationship})`,
+          detail: "Thân nhân",
           regId: reg.id,
         });
       });
@@ -541,7 +543,12 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                         {bus.passengers.map((passenger, pIdx) => (
                           <tr key={pIdx} className="hover:bg-slate-50/50 transition-colors">
                             <td className="py-3 px-6 text-center font-bold text-slate-400">{pIdx + 1}</td>
-                            <td className="py-3 px-6 font-extrabold text-slate-800">{passenger.name}</td>
+                            <td className="py-3 px-6">
+                              <div className="font-extrabold text-slate-800">{passenger.name}</div>
+                              {passenger.subName && (
+                                <div className="text-[10.5px] text-slate-500 font-medium mt-0.5">{passenger.subName}</div>
+                              )}
+                            </td>
                             <td className="py-3 px-6">
                               <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded-md ${
                                 passenger.role === "Nhân viên"
@@ -571,9 +578,16 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                     {bus.passengers.map((passenger, pIdx) => (
                       <div key={pIdx} className="p-4 flex justify-between items-center hover:bg-slate-50/50 transition-all">
                         <div className="space-y-1">
-                          <div className="flex items-center gap-2">
-                            <span className="text-[10px] font-bold text-slate-400">#{pIdx + 1}</span>
-                            <span className="font-extrabold text-xs text-slate-800">{passenger.name}</span>
+                          <div className="flex flex-col">
+                            <div className="flex items-center gap-2">
+                              <span className="text-[10px] font-bold text-slate-400">#{pIdx + 1}</span>
+                              <span className="font-extrabold text-xs text-slate-800">{passenger.name}</span>
+                            </div>
+                            {passenger.subName && (
+                              <div className="text-[10px] text-slate-500 mt-0.5 ml-[26px]">
+                                {passenger.subName}
+                              </div>
+                            )}
                           </div>
                           <div className="flex items-center gap-2">
                             <span className={`text-[8px] font-black uppercase px-1.5 py-0.5 rounded-md ${
