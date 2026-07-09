@@ -635,8 +635,7 @@ export default function RoomInfo({ registrations }: RoomInfoProps) {
             <Bed className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-lg font-bold text-slate-800 uppercase tracking-tight">Sơ đồ phòng nghỉ</h2>
-            <p className="text-xs text-slate-500 font-medium font-semibold text-slate-400">Danh sách bố trí phòng nghỉ cho các thành viên tham gia đoàn</p>
+            <h2 className="text-lg font-bold text-slate-800 uppercase tracking-tight">Danh sách bố trí phòng nghỉ cho các thành viên tham gia đoàn</h2>
           </div>
         </div>
       )}
