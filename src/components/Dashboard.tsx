@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Registration } from "../types";
-import { calculateAge, formatDate, exportToCSV } from "../utils";
+import { calculateAge, formatDate, exportToExcel } from "../utils";
 
 interface DashboardProps {
   registrations: Registration[];
@@ -199,20 +199,29 @@ export default function Dashboard({ registrations, onDeleteRegistration, onEditR
       {/* REGISTRATION TABLE */}
       <div className="md:bg-white md:rounded-2xl md:border md:border-slate-100 md:shadow-sm md:overflow-hidden" id="dashboard-table-card">
         <div className="bg-white rounded-2xl border border-slate-100 shadow-sm px-6 py-4 flex items-center justify-between mb-4 md:mb-0 md:rounded-none md:border-0 md:border-b md:border-slate-100 md:shadow-none">
-          <h3 className="text-sm font-semibold text-slate-800">
-            Danh sách đăng ký ({filteredRegistrations.length})
-          </h3>
-          {searchTerm || companionFilter !== "Tất cả" ? (
-            <button
-              onClick={() => {
-                setSearchTerm("");
-                setCompanionFilter("Tất cả");
-              }}
-              className="text-[11px] font-semibold text-sky-600 hover:underline"
-            >
-              Đặt lại bộ lọc
-            </button>
-          ) : null}
+          <div className="flex items-center gap-3">
+            <h3 className="text-sm font-semibold text-slate-800">
+              Danh sách đăng ký ({filteredRegistrations.length})
+            </h3>
+            {searchTerm || companionFilter !== "Tất cả" ? (
+              <button
+                onClick={() => {
+                  setSearchTerm("");
+                  setCompanionFilter("Tất cả");
+                }}
+                className="text-[11px] font-semibold text-sky-600 hover:underline"
+              >
+                Đặt lại bộ lọc
+              </button>
+            ) : null}
+          </div>
+          <button
+            onClick={() => exportToExcel(filteredRegistrations)}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200/50 rounded-lg text-[13px] font-semibold transition-colors cursor-pointer shadow-sm active:scale-95"
+          >
+            <Download className="w-4 h-4" />
+            Xuất Excel
+          </button>
         </div>
 
         {filteredRegistrations.length === 0 ? (

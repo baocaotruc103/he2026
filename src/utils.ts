@@ -33,64 +33,50 @@ export function formatDate(dateString: string): string {
   return `${parts[2]}/${parts[1]}/${parts[0]}`;
 }
 
-/**
- * Exports registration data to a downloadable CSV file (UTF-8 with BOM for Vietnamese characters)
- */
-export function exportToCSV(registrations: Registration[]) {
-  const headers = [
-    "STT",
-    "Loại đối tượng",
-    "Họ và tên",
-    "Ngày sinh",
-    "Tuổi",
-    "Số điện thoại",
-    "Quan hệ",
-    "Ghi chú",
-    "Ngày đăng ký",
-  ];
+import * as XLSX from "xlsx";
 
-  const rows: string[][] = [];
+/**
+ * Exports registration data to a downloadable Excel file
+ */
+export function exportToExcel(registrations: Registration[]) {
+  const data: any[] = [];
   let index = 1;
 
   registrations.forEach((reg) => {
     // Add employee row
-    rows.push([
-      String(index++),
-      "Nhân viên",
-      reg.employee.fullName,
-      formatDate(reg.employee.dob),
-      String(calculateAge(reg.employee.dob)),
-      reg.employee.phone,
-      "Bản thân",
-      reg.notes || "",
-      formatDate(reg.createdAt.substring(0, 10)),
-    ]);
+    data.push({
+      "Số TT": index++,
+      "Họ và tên": reg.employee.fullName,
+      "Ngày tháng năm sinh": formatDate(reg.employee.dob),
+      "Số điện thoại": reg.employee.phone,
+      "Ghi chú": `Nhân viên` + (reg.notes ? ` - ${reg.notes}` : "")
+    });
 
     // Add companion rows
     reg.companions.forEach((comp) => {
-      rows.push([
-        "",
-        "Thân nhân",
-        comp.fullName,
-        formatDate(comp.dob),
-        String(calculateAge(comp.dob)),
-        comp.phone,
-        comp.relationship,
-        "",
-        "",
-      ]);
+      data.push({
+        "Số TT": index++,
+        "Họ và tên": comp.fullName,
+        "Ngày tháng năm sinh": formatDate(comp.dob),
+        "Số điện thoại": comp.phone,
+        "Ghi chú": `Thân nhân (${comp.relationship} của ${reg.employee.fullName})`
+      });
     });
   });
 
-  const csvContent =
-    "data:text/csv;charset=utf-8,\uFEFF" +
-    [headers.join(","), ...rows.map((row) => row.map((val) => `"${val.replace(/"/g, '""')}"`).join(","))].join("\n");
+  const worksheet = XLSX.utils.json_to_sheet(data);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "DanhSach");
+  
+  // Auto-size columns slightly
+  const wscols = [
+    {wch: 8},
+    {wch: 25},
+    {wch: 15},
+    {wch: 15},
+    {wch: 40}
+  ];
+  worksheet['!cols'] = wscols;
 
-  const encodedUri = encodeURI(csvContent);
-  const link = document.createElement("a");
-  link.setAttribute("href", encodedUri);
-  link.setAttribute("download", `Danh_sach_dang_ky_nghi_he_${new Date().getFullYear()}.csv`);
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  XLSX.writeFile(workbook, `Danh_sach_doan_${new Date().getFullYear()}.xlsx`);
 }
