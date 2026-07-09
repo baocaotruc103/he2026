@@ -625,19 +625,7 @@ export default function VehicleList({ registrations }: VehicleListProps) {
         })}
       </div>
 
-      {/* Allocation policy */}
-      <div className="bg-amber-50/50 border border-amber-100/40 rounded-2xl p-4 flex gap-3 text-sm leading-relaxed text-slate-600">
-        <Info className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-        <div className="space-y-1">
-          <p className="font-extrabold text-slate-700">Chính sách điều phối sắp xếp phương tiện:</p>
-          <p className="text-[13px] text-slate-500">
-            • <strong>Tính gắn kết gia đình:</strong> Hệ thống luôn xếp toàn bộ thành viên trong cùng một phiếu đăng ký di chuyển trên cùng một chuyến xe để đảm bảo các gia đình luôn đồng hành cùng nhau.
-          </p>
-          <p className="text-[13px] text-slate-500">
-            • <strong>Điều chỉnh xe:</strong> Nếu anh/chị có nguyện vọng chuyển đổi xe để di chuyển cùng nhóm bạn hoặc đồng nghiệp khác, vui lòng liên hệ sớm với Ban tổ chức trước ngày khởi hành 03 ngày.
-          </p>
-        </div>
-      </div>
+
     </div>
   );
 }
