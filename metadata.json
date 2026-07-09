@@ -1,0 +1,6 @@
+{
+  "name": "Đăng ký Nghỉ hè",
+  "description": "Ứng dụng đăng ký thông tin đi nghỉ hè dành cho nhân viên và thân nhân, đi kèm Dashboard danh sách đăng ký.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

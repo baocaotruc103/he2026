@@ -1,0 +1,31 @@
+[
+  {
+    "roomNo": "607",
+    "roomType": "Family",
+    "roomTypeName": "Family Suite Ocean View",
+    "capacity": 4,
+    "guests": [
+      {
+        "name": "Phan Duy Thắng",
+        "role": "Nhân viên",
+        "regId": "z4r3414tc"
+      },
+      {
+        "name": "Trần Thị Thu Huyền",
+        "role": "Thân nhân (Vợ)",
+        "regId": "z4r3414tc"
+      },
+      {
+        "name": "Phan Trần Duy Anh",
+        "role": "Thân nhân (Con)",
+        "regId": "z4r3414tc"
+      },
+      {
+        "name": "Phan Trần Minh Tuệ",
+        "role": "Thân nhân (Con)",
+        "regId": "z4r3414tc"
+      }
+    ],
+    "notes": "Phòng gia đình tiện nghi"
+  }
+]
