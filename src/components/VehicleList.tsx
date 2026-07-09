@@ -511,8 +511,8 @@ export default function VehicleList({ registrations }: VehicleListProps) {
                       {bus.plate}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-400">
-                    Trưởng xe điều hành: <strong>{bus.leaderName}</strong> ({bus.leaderPhone})
+                  <p className="text-xs text-red-600 font-bold">
+                    Trưởng xe điều hành: {bus.leaderName} ({bus.leaderPhone})
                   </p>
                 </div>
                 <div className="text-right text-[13px] text-slate-500 font-bold bg-white border border-slate-200/60 px-3 py-1 rounded-lg">
