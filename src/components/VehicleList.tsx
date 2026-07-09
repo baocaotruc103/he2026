@@ -260,9 +260,9 @@ export default function VehicleList({ registrations }: VehicleListProps) {
       },
       {
         busId: "xe-2",
-        busName: "Xe số 2 (Xe 29 chỗ)",
+        busName: "Xe số 2 (Xe 45 chỗ)",
         plate: "29F-043.77",
-        capacity: 29,
+        capacity: 45,
         leaderName: "Phan Duy Thắng",
         leaderPhone: "0988231083",
         passengers: xe2Passengers,
