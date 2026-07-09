@@ -518,21 +518,21 @@ export default function App() {
               <h3 className="text-xs font-extrabold text-slate-400 uppercase tracking-wider">Danh mục cổng thông tin</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="homepage-navigation-grid">
                 
-                {/* 1. Thông tin Resort */}
+                {/* 1. Lịch trình */}
                 <button
-                  onClick={() => setCurrentPage("resort")}
-                  className="bg-white hover:bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm text-left hover:border-emerald-200 hover:-translate-y-1 transition-all cursor-pointer space-y-3 relative group overflow-hidden"
+                  onClick={() => setCurrentPage("itinerary")}
+                  className="bg-white hover:bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm text-left hover:border-orange-200 hover:-translate-y-1 transition-all cursor-pointer space-y-3 relative group overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-emerald-500/5 rounded-bl-full group-hover:bg-emerald-500/10 transition-colors" />
-                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-[#059669] flex items-center justify-center border border-emerald-100 shadow-sm">
-                    <Hotel className="w-5 h-5" />
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-orange-500/5 rounded-bl-full group-hover:bg-orange-500/10 transition-colors" />
+                  <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center border border-orange-100 shadow-sm">
+                    <Sun className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-[#059669] transition-colors flex items-center gap-1.5">
-                      Thông tin Resort
+                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-orange-600 transition-colors flex items-center gap-1.5">
+                      Lịch trình du lịch hè
                     </h4>
                     <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
-                      Khám phá bãi biển Quỳnh Nghĩa, tiện ích phòng ốc, các khu hoạt động teambuilding và lưu ý chuẩn bị hành lý trước chuyến đi nghỉ mát.
+                      Xem chi tiết kế hoạch các hoạt động, thời gian biểu và điểm đến trong suốt 3 ngày 2 đêm của chuyến đi.
                     </p>
                   </div>
                 </button>
@@ -575,26 +575,7 @@ export default function App() {
                   </div>
                 </button>
 
-                {/* 4. Thông tin lái xe */}
-                <button
-                  onClick={() => setCurrentPage("drivers")}
-                  className="bg-white hover:bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm text-left hover:border-emerald-200 hover:-translate-y-1 transition-all cursor-pointer space-y-3 relative group overflow-hidden"
-                >
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-rose-500/5 rounded-bl-full group-hover:bg-rose-500/10 transition-colors" />
-                  <div className="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center border border-rose-100 shadow-sm">
-                    <Truck className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-rose-600 transition-colors flex items-center gap-1.5">
-                      Thông tin lái xe
-                    </h4>
-                    <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
-                      Tra cứu thông tin liên lạc của các tài xế, số điện thoại trưởng xe điều phối từng đoàn xe, giờ giấc xuất phát và điểm đón chính xác.
-                    </p>
-                  </div>
-                </button>
-
-                {/* 5. Danh sách theo xe */}
+                {/* 4. Danh sách theo xe */}
                 <button
                   onClick={() => setCurrentPage("vehicles")}
                   className="bg-white hover:bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm text-left hover:border-amber-200 hover:-translate-y-1 transition-all cursor-pointer space-y-3 relative group overflow-hidden"
@@ -613,21 +594,40 @@ export default function App() {
                   </div>
                 </button>
 
-                {/* 6. Lịch trình */}
+                {/* 5. Thông tin lái xe */}
                 <button
-                  onClick={() => setCurrentPage("itinerary")}
-                  className="bg-white hover:bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm text-left hover:border-orange-200 hover:-translate-y-1 transition-all cursor-pointer space-y-3 relative group overflow-hidden"
+                  onClick={() => setCurrentPage("drivers")}
+                  className="bg-white hover:bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm text-left hover:border-emerald-200 hover:-translate-y-1 transition-all cursor-pointer space-y-3 relative group overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-orange-500/5 rounded-bl-full group-hover:bg-orange-500/10 transition-colors" />
-                  <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center border border-orange-100 shadow-sm">
-                    <Sun className="w-5 h-5" />
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-rose-500/5 rounded-bl-full group-hover:bg-rose-500/10 transition-colors" />
+                  <div className="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center border border-rose-100 shadow-sm">
+                    <Truck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-orange-600 transition-colors flex items-center gap-1.5">
-                      Lịch trình du lịch hè
+                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-rose-600 transition-colors flex items-center gap-1.5">
+                      Thông tin lái xe
                     </h4>
                     <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
-                      Xem chi tiết kế hoạch các hoạt động, thời gian biểu và điểm đến trong suốt 3 ngày 2 đêm của chuyến đi.
+                      Tra cứu thông tin liên lạc của các tài xế, số điện thoại trưởng xe điều phối từng đoàn xe, giờ giấc xuất phát và điểm đón chính xác.
+                    </p>
+                  </div>
+                </button>
+
+                {/* 6. Thông tin Resort */}
+                <button
+                  onClick={() => setCurrentPage("resort")}
+                  className="bg-white hover:bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm text-left hover:border-emerald-200 hover:-translate-y-1 transition-all cursor-pointer space-y-3 relative group overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-emerald-500/5 rounded-bl-full group-hover:bg-emerald-500/10 transition-colors" />
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-[#059669] flex items-center justify-center border border-emerald-100 shadow-sm">
+                    <Hotel className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-extrabold text-sm text-slate-800 group-hover:text-[#059669] transition-colors flex items-center gap-1.5">
+                      Thông tin Resort
+                    </h4>
+                    <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
+                      Khám phá bãi biển Quỳnh Nghĩa, tiện ích phòng ốc, các khu hoạt động teambuilding và lưu ý chuẩn bị hành lý trước chuyến đi nghỉ mát.
                     </p>
                   </div>
                 </button>
